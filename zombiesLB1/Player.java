@@ -14,12 +14,15 @@ public class Player extends Actor
      */
     
     public Player () {
-        setImage(new GreenfootImage(50,50));
+        setImage(new GreenfootImage(70,50));
         getImage().setColor(Color.YELLOW); //farbe des spielers setzen
         getImage().fillOval(0, 0, 50, 50); // form des spielers setzen
+        getImage().setColor(Color.BLACK);
+        getImage().fillRect(50, 25, 70, 10);//waffe eingefügt
     }
     public void act()
     {
-        // Add your action code here.
+        if(Greenfoot.getMouseInfo() != null) //der maus ist auf dem bildschrim
+        turnTowards(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY()); //spieler dreht in richtung der maus
     }
 }
