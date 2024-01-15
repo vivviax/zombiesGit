@@ -24,9 +24,17 @@ public class Player extends Actor
     }
     public void act()
     {
+        turnAround();
+        moveAround();
+        fireProjectile();
+    }
+    
+    public void turnAround() {
         if(Greenfoot.getMouseInfo() != null) //der maus ist auf dem bildschrim
         turnTowards(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY()); //spieler dreht in richtung der maus
-        
+    }
+    
+    public void moveAround() {
         if(Greenfoot.isKeyDown("w")) //spieler bewegt sich mit w,a,s,d tasten
         setLocation(getX(),getY() - speed);
         if(Greenfoot.isKeyDown("a"))
@@ -36,4 +44,14 @@ public class Player extends Actor
         if(Greenfoot.isKeyDown("d"))
         setLocation(getX() + speed,getY());
     }
+    
+    public void fireProjectile() {
+        if(Greenfoot.mousePressed(null)) {
+            Projectile projectile = new Projectile();
+            getWorld().addObject(projectile, getX(), getY());
+            projectile.setRotation(getRotation());
+        }
+    }
 }
+
+    

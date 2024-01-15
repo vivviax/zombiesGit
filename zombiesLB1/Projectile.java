@@ -15,11 +15,11 @@ public class Projectile extends Actor
     public Projectile() {
         setImage(new GreenfootImage(10, 2)); //10 pixel lang und 2 pixel breit
         getImage().setColor(Color.BLACK);
-        getImage().fillRect(50, 25, 10, 2);
+        getImage().fillRect(0, 0, 10, 2);
     }
     
     public void act()
     {
-        // Add your action code here.
+        move(10); //projectile bewegt sich
     }
 }
