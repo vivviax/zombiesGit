@@ -21,5 +21,8 @@ public class Projectile extends Actor
     public void act()
     {
         move(10); //projectile bewegt sich
+        if(isAtEdge()) {
+            getWorld().removeObject(this);
+        }
     }
 }

@@ -15,15 +15,21 @@ public class Zombie extends Actor
     int animateImage = 0;
     int animateSpeed = 5; //Geschwindigkeit der Zombies 
     int count;
+    int health = 5;
+    Player player;
     
-    public Zombie() {
+    public Zombie(Player mainPlayer) {
+        player = mainPlayer;
         setImage("skeleton-idle_16.png");
         getImage().scale(80,80);
     }
+    
     public void act()
     {
         count++;
         animate();
+        moveAround();
+        hitByProjectile();
     }
     
     public void animate() {
@@ -31,9 +37,24 @@ public class Zombie extends Actor
             if(animateImage > 16) {
                 animateImage = 0;
             }
-            setImage("skeleton-move_" + animateImage + ".png"); //zombies laufen
+            setImage("skeleton-move_" + animateImage + ".png"); //zombies laufen (16 photos of zombies)
             animateImage++;
             getImage().scale(80,80); //die grösse der zombies reduktieren
         }
+    }
+    
+    public void moveAround() {
+        move(1);
+        turnTowards(player.getX(), player.getY()); //Zombies drehen sich dem Spieler zu
+    }
+    
+    public void hitByProjectile() {
+        Actor projectile = getOneIntersectingObject(Projectile.class);
+        if(projectile != null) {
+            health--;
+            getWorld().removeObject(projectile);
+        }
+        if(health == 0)
+            getWorld().removeObject(this);
     }
 }
