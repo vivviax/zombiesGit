@@ -19,7 +19,7 @@ public class Player extends Actor
         setImage(new GreenfootImage(70,50));
         getImage().setColor(Color.YELLOW); //farbe des spielers setzen
         getImage().fillOval(0, 0, 50, 50); // form des spielers setzen
-        getImage().setColor(Color.BLACK);
+        getImage().setColor(Color.BLACK); //farbe der waffe
         getImage().fillRect(50, 25, 70, 10);//waffe eingefügt
     }
     public void act()
