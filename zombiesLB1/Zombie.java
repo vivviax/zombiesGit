@@ -13,6 +13,7 @@ public class Zombie extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int animateImage = 0;
+    int animateSpeed = 5; //Geschwindigkeit der Zombies 
     int count;
     
     public Zombie() {
@@ -26,13 +27,13 @@ public class Zombie extends Actor
     }
     
     public void animate() {
-        if(count % 8 == 0) {
+        if(count % animateSpeed == 0) { //geschwindigkeit der zombies beim gehen
             if(animateImage > 16) {
                 animateImage = 0;
             }
             setImage("skeleton-move_" + animateImage + ".png"); //zombies laufen
             animateImage++;
-            
+            getImage().scale(80,80); //die grösse der zombies reduktieren
         }
     }
 }
