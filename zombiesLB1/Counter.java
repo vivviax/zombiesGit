@@ -12,8 +12,15 @@ public class Counter extends Actor
      * Act - do whatever the Counter wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    int score;
+    int money;
+    
+    public Counter() {
+        setImage(new GreenfootImage("Score: " + score + "\n Cash " + money, 40, Color.RED, new Color (0, 0, 0, 0))); //add counter in myworld
+    }
+    
     public void act()
     {
-        // Add your action code here.
+        setImage(new GreenfootImage("Score: " + score + "\n Cash " + money, 40, Color.RED, new Color (0, 0, 0, 0)));
     }
 }

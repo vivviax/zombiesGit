@@ -15,10 +15,12 @@ public class Zombie extends Actor
     int animateImage = 0;
     int animateSpeed = 5; //Geschwindigkeit der Zombies 
     int count;
-    int health = 5;
+    int health = 1;
     Player player;
+    Counter counter;
     
-    public Zombie(Player mainPlayer) {
+    public Zombie(Player mainPlayer,Counter counter) {
+        this.counter = counter;
         player = mainPlayer;
         setImage("skeleton-idle_16.png");
         getImage().scale(80,80);
@@ -54,7 +56,10 @@ public class Zombie extends Actor
             health--;
             getWorld().removeObject(projectile);
         }
-        if(health == 0)
+        if(health == 0) {
+            counter.score++; //add score for every kill
+            counter.money+=5; // add money for every kill
             getWorld().removeObject(this);
+        }
     }
 }
