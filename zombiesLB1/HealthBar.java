@@ -28,14 +28,21 @@ public class HealthBar extends Actor
         getImage().drawRect(0, 0, 51, 11);
         getImage().setColor(Color.RED);
         getImage().fillRect(1, 1, health, 10);
+        World world = getWorld();
+        MyWorld myWorld = (MyWorld)world;
+        setLocation(myWorld.getPlayer().getX() -5, myWorld.getPlayer().getY() -50); //healthbar follows the player
         loseHealth();
     }
     
     public void loseHealth() {
         World world = getWorld();
         MyWorld myWorld = (MyWorld)world;
-        if(myWorld.getPlayer().hitByZombie()) {
+        if(myWorld.getPlayer().hitByZombie()) { //subtract health when hit by zombies
             health--;
+        }
+        if(health<=0) {
+        getWorld().showText("You Lose! \n You survived for " + (myWorld.getPlayer().time/60) + " seconds", getWorld().getWidth()/2, getWorld().getHeight()/2);
+        Greenfoot.stop();
         }
     }
 }
