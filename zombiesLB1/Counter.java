@@ -14,6 +14,7 @@ public class Counter extends Actor
      */
     int score;
     int money;
+    int time;
     
     public Counter() {
         setImage(new GreenfootImage("Score: " + score + "\n Cash " + money, 40, Color.RED, new Color (0, 0, 0, 0))); //add counter in myworld
