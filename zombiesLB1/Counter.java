@@ -16,11 +16,11 @@ public class Counter extends Actor
     int money;
     int time;
     
-    public Counter() {
+    public Counter() { // Bild und Aussehen des Zählers festlegen
         setImage(new GreenfootImage("Score: " + score + "\n Cash " + money, 40, Color.RED, new Color (0, 0, 0, 0))); //add counter in myworld
     }
     
-    public void act()
+    public void act() // Aktualisieren Sie die Zähler-Display
     {
         setImage(new GreenfootImage("Score: " + score + "\n Cash " + money, 40, Color.RED, new Color (0, 0, 0, 0)));
     }

@@ -12,12 +12,12 @@ public class Zombie extends Actor
      * Act - do whatever the Zombie wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    int animateImage = 0;
-    int animateSpeed = 5; //Geschwindigkeit der Zombies 
+    int animateImage = 0; // Zähler für Zombie-Animationsbilder
+    int animateSpeed = 5; //Geschwindigkeit der Zombie-Animation 
     int count;
-    int health = 1;
-    Player player;
-    Counter counter;
+    int health = 1; // Gesundheit der Zombies
+    Player player; // Verweis auf das Player-Objekt
+    Counter counter; // Verweis auf das Counter-Objekt
     
     public Zombie(Player mainPlayer,Counter counter) {
         this.counter = counter;
@@ -34,7 +34,8 @@ public class Zombie extends Actor
         hitByProjectile();
     }
     
-    public void animate() {
+    public void animate() { 
+        // Den Zombie animieren
         if(count % animateSpeed == 0) { //geschwindigkeit der zombies beim gehen
             if(animateImage > 16) {
                 animateImage = 0;
@@ -51,6 +52,7 @@ public class Zombie extends Actor
     }
     
     public void hitByProjectile() {
+        // prüfen, ob der Zombie von einem Projektil getroffen wurde
         Actor projectile = getOneIntersectingObject(Projectile.class);
         if(projectile != null) {
             health--;

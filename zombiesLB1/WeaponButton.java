@@ -13,8 +13,8 @@ public class WeaponButton extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    Counter counter;
-    int weaponUpgrade = 1;
+    Counter counter; // Verweis auf das Counter-Objekt
+    int weaponUpgrade = 1; // Aktuelle Waffenaufrüstungsstufe
     
     public WeaponButton (Counter counter) {
         this.counter = counter;
@@ -23,10 +23,12 @@ public class WeaponButton extends Actor
     
     public void act()
     {
+        // Waffe aufrüsten, wenn sie angeklickt wird und der Spieler genug Geld hat
         if(Greenfoot.mousePressed(this) && counter.money > 149) { //weapon can only be upgraded when the cash is over 150
             counter.money -= 150;
             weaponUpgrade++;
         }
+        // Begrenzung der Waffenaufrüstungsstufe auf 3
         if(weaponUpgrade > 3) {
             weaponUpgrade = 3;
         }

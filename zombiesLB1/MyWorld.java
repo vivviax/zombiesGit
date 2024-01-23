@@ -8,17 +8,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    int count = 0;
-    int spawnSpeed =50; //spawnSpeed ​​wird schneller sein, wenn sein Wert verringert wird
-    int randomSpawn; //erhält eine Zufallszahl zwischen 1 und 7
-    public Player mainPlayer = new Player();
-    Counter counter = new Counter();
-    HealthBar healthbar = new HealthBar();
-    WeaponButton weaponButton = new WeaponButton(counter);
-    SuperPower superPower = new SuperPower();
+    int count = 0; //Zähler zur Erfassung der Spielzeit
+    int spawnSpeed =50; // Geschwindigkeit, mit der Zombies auftauchen, nimmt mit der Zeit ab
+    int randomSpawn; //enthält eine Zufallszahl zwischen 1 und 7
+    public Player mainPlayer = new Player(); // Player object
+    Counter counter = new Counter(); // Punkte- und Geldzähler
+    HealthBar healthbar = new HealthBar(); // Lebenspunkteleiste für den Spieler
+    WeaponButton weaponButton = new WeaponButton(counter); // Button für Waffen-Upgrades
+    SuperPower superPower = new SuperPower(); // Superkräfte-Bar
     public MyWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Create a new world with 10000x800 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1); 
         mainPlayer = new Player(weaponButton, superPower);
         addObject(mainPlayer, getWidth()/2, getHeight()/2); //player in myWorld einfügen
@@ -28,22 +28,25 @@ public class MyWorld extends World
         addObject(superPower, mainPlayer.getX() + 10, mainPlayer.getY() -80);
     }
     
-    public Player getPlayer() {
+    public Player getPlayer() { // Getter-Methode für das Player-Objekt
         return mainPlayer;
     }
     
     public void act() {
         count++;
-        if(count % 600 == 0) {
+        // Geschwindigkeit des Spawns über die Zeit anpassen
+        if(count % 600 == 0) { 
             spawnSpeed--;
         }
+        // Das Spiel anhalten, wenn 'p' gedrückt wird
         while(Greenfoot.isKeyDown("p")) {
             Greenfoot.delay(1);
         }
         spawnZombies();
     }
     
-    public void spawnZombies() {
+    public void spawnZombies() { 
+        // Switch-Anweisung, um den Spawn-Ort der Zombies zu bestimmen
         if(count % spawnSpeed == 0) {
             randomSpawn = Greenfoot.getRandomNumber(8);
             switch(randomSpawn) {

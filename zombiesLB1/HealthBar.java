@@ -12,10 +12,10 @@ public class HealthBar extends Actor
      * Act - do whatever the HealthBar wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    int health = 50;
+    int health = 50; // Gesundheit des Spielers
     
     
-    public HealthBar() {
+    public HealthBar() { // Bild und Aussehen der Gesundheitsleiste festlegen
         setImage(new GreenfootImage(52, 12));
         getImage().drawRect(0, 0, 51, 11);
         getImage().setColor(Color.RED);
@@ -24,6 +24,7 @@ public class HealthBar extends Actor
     
     public void act()
     {
+        // Aktualisieren der Anzeige der Gesundheitsleiste
         setImage(new GreenfootImage(52, 12));
         getImage().drawRect(0, 0, 51, 11);
         getImage().setColor(Color.RED);
@@ -31,14 +32,15 @@ public class HealthBar extends Actor
         World world = getWorld();
         MyWorld myWorld = (MyWorld)world;
         setLocation(myWorld.getPlayer().getX() -5, myWorld.getPlayer().getY() -50); //healthbar follows the player
-        loseHealth();
+        loseHealth(); // Überprüfung auf Gesundheitsschäden
     }
     
     public void loseHealth() {
+        // Gesundheit verringern, wenn der Spieler von Zombies getroffen wird
         World world = getWorld();
         MyWorld myWorld = (MyWorld)world;
         if(myWorld.getPlayer().hitByZombie()) { //subtract health when hit by zombies
-            health--;
+        health--;
         }
         if(health<=0) {
         getWorld().showText("You Lose! \n You survived for " + (myWorld.getPlayer().time/60) + " seconds", getWorld().getWidth()/2, getWorld().getHeight()/2);

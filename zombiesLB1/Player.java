@@ -13,11 +13,11 @@ public class Player extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    int speed = 3;
-    int time = 0;
-    WeaponButton weaponButton;
-    SuperPower superPower;
-    int superTimer;
+    int speed = 3; // Geschwindigkeit der Spielerbewegung
+    int time = 0; // Zähler für die Überlebenszeit des Spielers
+    WeaponButton weaponButton; // Verweis auf die Waffentaste für Upgrades
+    SuperPower superPower; // Verweis auf die Superkraftleiste
+    int superTimer; // Timer für die Nutzung der Superkräfte
     
     public Player () {
         setImage(new GreenfootImage(70,50));
@@ -48,8 +48,9 @@ public class Player extends Actor
     }
     
     public void turnAround() {
-        if(Greenfoot.getMouseInfo() != null) //der maus ist auf dem bildschrim
-        turnTowards(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY()); //spieler dreht in richtung der maus
+        // Methode, um den Spieler in Richtung der Mausposition zu bewegen
+        if(Greenfoot.getMouseInfo() != null) 
+        turnTowards(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY()); 
     }
     
     public void moveAround() {
@@ -63,7 +64,7 @@ public class Player extends Actor
         setLocation(getX() + speed,getY());
     }
     
-    public void fireProjectile() {
+    public void fireProjectile() { // schiesst Projektile auf Basis von Waffen-Upgrades
         if(Greenfoot.mousePressed(null) && weaponButton.weaponUpgrade == 1) { //level 1 upgrade: 1 bullet
             Projectile projectile = new Projectile();
             getWorld().addObject(projectile, getX(), getY());
@@ -141,6 +142,7 @@ public class Player extends Actor
     }
     
     public boolean hitByZombie() {
+        //prüfen, ob der Spieler von einem Zombie getroffen wurde
         Actor zombie = getOneObjectAtOffset(0, 0, Zombie.class);
         if(zombie!=null) {
             return true;

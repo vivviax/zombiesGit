@@ -22,7 +22,7 @@ public class Projectile extends Actor
     {
         move(10); //projectile bewegt sich
         if(isAtEdge()) {
-            getWorld().removeObject(this);
+            getWorld().removeObject(this); // Projektil entfernen, wenn es die Ecke erreicht
         }
     }
 }
