@@ -40,7 +40,7 @@ public class SuperPower extends Actor
     
     public void useSuper() {
         count++;
-        if(count % 10 == 0) // Erhöhen der Leiste alle 10 Zählzeiten
+        if(count % 10 == 0) // Erhöhen der Leiste alle 10 counts
         
         superCount++;
         
