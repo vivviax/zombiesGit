@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Zombie here.
+ * Die Zombie-Klasse kümmert sich um Zombie-Animation, Bewegung und Interaktion mit Projektilen.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Vivian Igboasoiyi 
+ * 25.01.2024
  */
 public class Zombie extends Actor
 {

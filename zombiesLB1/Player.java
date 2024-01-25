@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Player here.
+ * Die Spielerklasse kümmert sich um die Spielerbewegung, das Abfeuern von Projektilen und den Einsatz von Superkräften.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Vivian Igboasoiyi 
+ * 25.01.2024
  */
 public class Player extends Actor
 {

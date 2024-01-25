@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Zombie
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Zombie\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Die\ Zombie-Klasse\ k\u00FCmmert\ sich\ um\ Zombie-Animation,\ Bewegung\ und\ Interaktion\ mit\ Projektilen.\r\n\ \r\n\ Vivian\ Igboasoiyi\ \r\n\ 25.01.2024\r\n
 comment1.params=mainPlayer\ counter
 comment1.target=Zombie(Player,\ Counter)
 comment2.params=

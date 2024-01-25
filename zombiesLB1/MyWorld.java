@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * Die MyWorld-Klasse kümmert sich um die Spielinitialisierung, die Spielereinrichtung, das Spawnen von Zombies und den Spielfortschritt.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Vivian Igboasoiyi 
+ * 25.01.2024
  */
 public class MyWorld extends World
 {

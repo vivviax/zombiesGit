@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Projectile here.
+ * Die Klasse Projectile stellt die vom Spieler abgefeuerten Kugeln dar.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Vivian Igboasoiyi 
+ * 25.01.2024
  */
 public class Projectile extends Actor
 {

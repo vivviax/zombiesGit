@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Weapon here.
+ * Die WeaponButton-Klasse stellt die Schaltfläche für Waffen-Upgrades im Spiel dar.
+ * Zeigt die aktuelle Waffen-Upgrade-Stufe an.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Vivian Igboasoiyi 
+ * 25.01.2024
  */
 public class WeaponButton extends Actor
 {

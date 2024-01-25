@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=WeaponButton
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Weapon\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Die\ WeaponButton-Klasse\ stellt\ die\ Schaltfl\u00E4che\ f\u00FCr\ Waffen-Upgrades\ im\ Spiel\ dar.\r\n\ Zeigt\ die\ aktuelle\ Waffen-Upgrade-Stufe\ an.\r\n\ \r\n\ Vivian\ Igboasoiyi\ \r\n\ 25.01.2024\r\n
 comment1.params=counter
 comment1.target=WeaponButton(Counter)
 comment2.params=

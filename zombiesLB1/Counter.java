@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Counter here.
+ * Die Counter-Klasse stellt den Punkte- und Geldzähler im Spiel dar.
+ * Es zeigt den aktuellen Punktestand und Geldbetrag auf dem Bildschirm an.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Vivian Igboasoiyi 
+ * 25.01.2024
  */
 public class Counter extends Actor
 {
