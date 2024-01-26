@@ -15,9 +15,9 @@ public class Zombie extends Actor
     int animateImage = 0; // Zähler für Zombie-Animationsbilder
     int animateSpeed = 5; //Geschwindigkeit der Zombie-Animation 
     int count;
-    int health = 1; // Gesundheit der Zombies
-    Player player; // Verweis auf das Player-Objekt
-    Counter counter; // Verweis auf das Counter-Objekt
+    int health = 3; // leben der Zombies
+    Player player; 
+    Counter counter; 
     
     public Zombie(Player mainPlayer,Counter counter) {
         this.counter = counter;

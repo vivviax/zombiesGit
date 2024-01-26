@@ -45,6 +45,7 @@ public class MyWorld extends World
         spawnZombies();
     }
     
+    
     public void spawnZombies() { 
         // Switch-Anweisung, um den Spawn-Ort der Zombies zu bestimmen
         if(count % spawnSpeed == 0) {
@@ -60,5 +61,7 @@ public class MyWorld extends World
                 case 7 : addObject(new Zombie(mainPlayer, counter), getWidth(), getHeight()); break;
             }
         }
+        
+    
     }
 }

@@ -25,4 +25,5 @@ public class Projectile extends Actor
             getWorld().removeObject(this); // Projektil entfernen, wenn es die Ecke erreicht
         }
     }
+    
 }
